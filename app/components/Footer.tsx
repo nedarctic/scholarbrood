@@ -4,10 +4,15 @@ import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube, FaReddit, FaTumblr } from "react-icons/fa";
 import { oswald } from "../fonts";
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const quickLinks = [
     { label: "About Us", href: "/about" },
@@ -123,7 +128,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-10 pt-8 border-t border-gray-800 text-center text-xs sm:text-sm text-gray-500">
           <p className={`${oswald.className}`}>
-            © <Suspense fallback="Loading...">{currentYear}</Suspense> ScholarBrood. All rights reserved.
+            © {year ?? "2026"} ScholarBrood. All rights reserved.
           </p>
         </div>
       </div>
