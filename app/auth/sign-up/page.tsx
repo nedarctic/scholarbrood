@@ -125,7 +125,7 @@ export default function SignUpPage() {
                   placeholder="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl border bg-white/80 dark:bg-gray-800/80 backdrop-blur focus:ring-2 focus:ring-[#E8B85F]/50"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl border bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-[#E8B85F]/50"
                 />
               </div>
 
@@ -138,7 +138,7 @@ export default function SignUpPage() {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-12 pr-12 py-4 rounded-2xl border bg-white/80 dark:bg-gray-800/80 backdrop-blur focus:ring-2 focus:ring-[#E8B85F]/50"
+                  className="w-full pl-12 pr-12 py-4 rounded-2xl border bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-[#E8B85F]/50"
                 />
                 <button
                   type="button"
@@ -158,7 +158,7 @@ export default function SignUpPage() {
                   placeholder="Repeat password"
                   value={repeatPassword}
                   onChange={(e) => setRepeatPassword(e.target.value)}
-                  className="w-full pl-12 pr-12 py-4 rounded-2xl border bg-white/80 dark:bg-gray-800/80 backdrop-blur focus:ring-2 focus:ring-[#E8B85F]/50"
+                  className="w-full pl-12 pr-12 py-4 rounded-2xl border bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-[#E8B85F]/50"
                 />
                 <button
                   type="button"
