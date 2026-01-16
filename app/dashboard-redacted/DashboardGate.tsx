@@ -29,8 +29,8 @@ async function SubscriptionDetails() {
 
   const subscription = await GetSubscription(user.id);
 
-  if (!isActiveSubscription(subscription)) {
-    redirect("/dashboard");
+  if (!isActiveSubscription(subscription) || isActiveSubscription(subscription) === null) {
+    redirect("/subscriptions");
   }
 
   return subscription;
@@ -49,7 +49,7 @@ export default async function DashboardPage() {
         transition-colors duration-500`}
     >
       {/* Dashboard Hero */}
-      <section className="relative pt-[110px] pb-[55px] px-5 sm:px-8">
+      <section className="relative pt-[120px] pb-[55px] px-5 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">

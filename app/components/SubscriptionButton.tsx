@@ -1,7 +1,7 @@
 "use client";
 
 import { PayPalButtons } from "@paypal/react-paypal-js";
-import { SubscriptionPlan } from "@/types/paypal";
+import { SubscriptionPlan } from "@/app/types/paypal";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -53,7 +53,8 @@ export default function SubscriptionButton({ plan }: SubscriptionButtonProps) {
 				}}
 				onApprove={async (data, actions) => {
 					try {
-						toast.success("Subscription successful!");router.push(
+						toast.success("Subscription successful!");
+						router.push(
 							`/success?subscriptionId=${data.subscriptionID}`
 						);
 					} catch (error) {

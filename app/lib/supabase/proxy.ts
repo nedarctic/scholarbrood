@@ -32,7 +32,6 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  // Session refresh / cookie sync (do not remove)
   await supabase.auth.getClaims();
 
   return supabaseResponse;

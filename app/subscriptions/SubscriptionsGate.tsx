@@ -17,17 +17,17 @@ export default async function SubscriptionsPage() {
     redirect("/auth/login");
   }
 
-  console.log("User ID in dashboard page:", user.id);
+  console.log("User ID in subscription page:", user.id);
 
   const subscription = await GetSubscription(user.id);
 
   if (isActiveSubscription(subscription)) {
-    redirect("/protected");
+    redirect("/dashboard");
   }
 
   return (
     <PayPalProvider>
-      <main className="min-h-screen bg-background px-6 py-12">
+      <main className="min-h-screen bg-background px-6 py-40">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-14">
@@ -48,7 +48,7 @@ export default async function SubscriptionsPage() {
               return (
                 <div
                   key={plan.id}
-                  className={`relative flex flex-col rounded-2xl border p-6 shadow-sm transition
+                  className={`relative flex flex-col rounded-2xl border p-6 z-0 shadow-sm transition
                     ${
                       isBestValue
                         ? "border-primary shadow-lg scale-[1.02]"
