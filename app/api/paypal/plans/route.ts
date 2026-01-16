@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPayPalAccessToken_Sandbox } from "@/lib/paypal/paypal";
+import { getPayPalAccessToken_Sandbox } from "@/app/lib/paypal/paypal";
 
 const PAYPAL_BASE =
   process.env.PAYPAL_MODE === "live"

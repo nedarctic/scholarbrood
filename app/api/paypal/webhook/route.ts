@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { UpdateSubscription, UpdateSubscriptionStatus, UpdateSubscriptionCycle, UpdateFailedPaymentStatus } from "@/lib/paypal/subscriptions";
+import { UpdateSubscription, UpdateSubscriptionStatus, UpdateSubscriptionCycle, UpdateFailedPaymentStatus } from "@/app/lib/paypal/subscriptions";
 import {
     PayPalWebhookEvent,
     PayPalSubscription,
     SaleResource,
-} from "@/types/paypal";
-import { PAYPAL_API, getPayPalAccessToken } from "@/lib/paypal/paypal";
+} from "@/app/types/paypal";
+import { PAYPAL_API, getPayPalAccessToken } from "@/app/lib/paypal/paypal";
 
 const WEBHOOK_ID = process.env.PAYPAL_WEBHOOK_ID!;
 
