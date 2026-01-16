@@ -89,9 +89,9 @@ export default function Blog() {
                   {post.category}
                 </span>
                 <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-white leading-tight">{post.title}</h3>
-                <p className="mt-3 text-gray-200 text-base sm:text-lg line-clamp-2">{post.title}</p>
+                <p className="mt-3 text-gray-200 text-base sm:text-lg line-clamp-2">{post.excerpt}</p>
                 <Link
-                  href={post.slug}
+                  href={`/blog/${post.slug}`}
                   className="mt-6 inline-flex items-center text-[#E8B85F] font-bold hover:gap-3 transition-all duration-300 text-sm sm:text-base"
                 >
                   Read More
@@ -139,9 +139,9 @@ export default function Blog() {
                     {post.category}
                   </span>
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white line-clamp-2 leading-tight">{post.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 line-clamp-3">{post.title}</p>
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 line-clamp-3">{post.excerpt}</p>
                   <Link
-                    href={post.slug}
+                    href={`/blog/${post.slug}`}
                     className="inline-flex items-center text-[#E8B85F] font-medium text-sm sm:text-base hover:gap-2 transition-all duration-300 mt-2"
                   >
                     Read More
