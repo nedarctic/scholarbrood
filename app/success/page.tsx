@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/app/lib/supabase/client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle, Mail, Calendar, User, CreditCard } from "lucide-react";
+import { oswald } from "../fonts";
 
 interface SubscriptionDetails {
   id: string;
@@ -35,9 +38,7 @@ export default function SuccessPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
- 
   // Check user authentication
-
   useEffect(() => {
     const checkAuth = async () => {
       const {
@@ -86,104 +87,283 @@ export default function SuccessPage() {
     fetchSubscriptionDetails();
   }, [subscriptionId]);
 
-  // Render loading, error, or success state
+  // Render loading state
   if (!authChecked || loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <h1 className="text-3xl font-bold text-gray-700">Loading...</h1>
-      </div>
+      <main className={`${oswald.className} min-h-screen bg-white dark:bg-[#1C1C30] flex items-center justify-center`}>
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-700 dark:text-gray-100">Loading...</h1>
+          <p className="mt-2 text-gray-600 dark:text-gray-300">Setting up your subscription</p>
+        </div>
+      </main>
     );
   }
 
   // Render error state
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
-        <h1 className="text-3xl font-bold text-red-600">Error</h1>
-        <p className="text-red-500">{error}</p>
-        <Link
-          href="/"
-          className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+      <main className={`${oswald.className} min-h-screen bg-white dark:bg-[#1C1C30] flex items-center justify-center px-5`}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-lg text-center"
         >
-          Return to Home
-        </Link>
-      </div>
+          <div className="w-20 h-20 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-10 h-10 border-4 border-red-500 dark:border-red-400 rounded-full border-t-transparent animate-spin"></div>
+          </div>
+          <h1 className="text-3xl font-bold text-red-600 dark:text-red-400 mb-4">Error Processing Subscription</h1>
+          <p className="text-gray-700 dark:text-gray-300 mb-8">{error}</p>
+          <motion.a
+            href="/"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#E8B85F] text-[#1C1C30] rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
+          >
+            Return to Home
+            <ArrowRight className="w-5 h-5" />
+          </motion.a>
+        </motion.div>
+      </main>
     );
   }
 
   return (
-    <div className="min-h-screen p-8 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-2xl mx-auto">
-        {/* Success header */}
-        <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg
-              className="w-8 h-8 text-green-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h1 className="text-3xl font-bold mb-2 text-green-600">
-            Subscription Successful!
+    <main
+      className={`${oswald.className} min-h-screen overflow-x-hidden font-sans
+        bg-white dark:bg-[#1C1C30]
+        text-gray-900 dark:text-gray-100
+        transition-colors duration-500`}
+    >
+      {/* HERO SECTION */}
+      <section className="relative pt-[110px] pb-[55px] min-h-screen flex items-center justify-center px-5 sm:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#E8B85F]/10 via-transparent to-[#1C1C30]/10 dark:from-[#E8B85F]/5 dark:to-[#1C1C30]/20 z-0" />
+        
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 max-w-4xl w-full text-center px-4"
+        >
+          {/* Success Icon */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            className="w-28 h-28 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl"
+          >
+            <CheckCircle className="w-16 h-16 text-white" strokeWidth={1.5} />
+          </motion.div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Welcome to <span className="text-[#E8B85F]">ScholarBrood Pro</span>
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
-            Welcome to the {subscription?.planName || "Pro"} plan! Your subscription has been activated.
+
+          <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
+            Your subscription to the <span className="font-bold text-[#E8B85F]">{subscription?.planName || "Premium"}</span> plan has been successfully activated!
+          </p>
+
+          {/* Success Message */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="bg-white dark:bg-[#1C1C30]/80 backdrop-blur-sm rounded-3xl border-2 border-green-500/20 p-8 mb-12 shadow-2xl"
+          >
+            <h3 className="text-2xl font-bold text-green-600 dark:text-green-400 mb-4">
+              🎉 Subscription Activated Successfully!
+            </h3>
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              You now have access to all premium features. Check your email for confirmation and next steps.
+            </p>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* SUBSCRIPTION DETAILS */}
+      <section className="py-20 px-5 sm:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+            Your <span className="text-[#E8B85F]">Subscription</span> Details
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Subscription Info Card */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ translateY: -8, scale: 1.02 }}
+              className="p-8 bg-white dark:bg-[#1C1C30]/80 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#E8B85F]/10 flex items-center justify-center">
+                  <CreditCard className="w-6 h-6 text-[#E8B85F]" />
+                </div>
+                <h3 className="text-2xl font-bold">Subscription Info</h3>
+              </div>
+
+              {subscription && (
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <span className="text-gray-600 dark:text-gray-400">Status</span>
+                    <span className="px-4 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold capitalize">
+                      {subscription.status}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <span className="text-gray-600 dark:text-gray-400">Plan</span>
+                    <span className="font-bold text-[#E8B85F]">{subscription.planName}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-400">Started</span>
+                    <span className="font-semibold">
+                      {new Date(subscription.startTime).toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </motion.article>
+
+            {/* User Info Card */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              whileHover={{ translateY: -8, scale: 1.02 }}
+              className="p-8 bg-white dark:bg-[#1C1C30]/80 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#E8B85F]/10 flex items-center justify-center">
+                  <User className="w-6 h-6 text-[#E8B85F]" />
+                </div>
+                <h3 className="text-2xl font-bold">Account Details</h3>
+              </div>
+
+              {subscription && (
+                <div className="space-y-4">
+                  <div className="pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <p className="text-gray-600 dark:text-gray-400 mb-1">Name</p>
+                    <p className="text-lg font-semibold">
+                      {subscription.subscriber.name.given_name} {subscription.subscriber.name.surname}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-600 dark:text-gray-400 mb-1">Email</p>
+                    <p className="text-lg font-semibold break-all">
+                      {subscription.subscriber.email_address}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </motion.article>
+
+            {/* Billing Info Card */}
+            {subscription && (
+              <motion.article
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ translateY: -8, scale: 1.02 }}
+                className="md:col-span-2 p-8 bg-white dark:bg-[#1C1C30]/80 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-[#E8B85F]/10 flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-[#E8B85F]" />
+                  </div>
+                  <h3 className="text-2xl font-bold">Billing Information</h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="p-6 bg-gradient-to-br from-[#E8B85F]/5 to-transparent rounded-2xl border border-[#E8B85F]/20">
+                    <p className="text-gray-600 dark:text-gray-400 mb-2">Next Billing Date</p>
+                    <p className="text-2xl font-bold text-[#E8B85F]">
+                      {new Date(subscription.billingInfo.nextBillingTime).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
+                      })}
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl border border-emerald-500/20">
+                    <p className="text-gray-600 dark:text-gray-400 mb-2">Cycles Completed</p>
+                    <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
+                      {subscription.billingInfo.cyclesCompleted}
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 bg-gradient-to-br from-red-500/5 to-transparent rounded-2xl border border-red-500/20">
+                    <p className="text-gray-600 dark:text-gray-400 mb-2">Failed Payments</p>
+                    <p className="text-2xl font-bold text-red-600 dark:text-red-400">
+                      {subscription.billingInfo.failedPayments}
+                    </p>
+                  </div>
+                </div>
+              </motion.article>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="py-20 px-5 sm:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+            What's <span className="text-[#E8B85F]">Next?</span>
+          </h2>
+          
+          <p className="text-xl text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            Your premium account is now active! You can access all features immediately. 
+            Need help getting started or have questions about your subscription?
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <motion.a
+              href="/dashboard"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#E8B85F] text-[#1C1C30] rounded-full font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 w-full sm:w-auto"
+            >
+              Go to Dashboard
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+
+            <motion.a
+              href="mailto:support@scholarbrood.com"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[#E8B85F] text-[#E8B85F] rounded-full font-semibold hover:bg-[#E8B85F] hover:text-[#1C1C30] transition-all duration-300 w-full sm:w-auto"
+            >
+              <Mail className="w-5 h-5" />
+              Contact Support
+            </motion.a>
+
+            <motion.a
+              href="/services"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 w-full sm:w-auto"
+            >
+              Explore Services
+              <ArrowRight className="w-5 h-5" />
+            </motion.a>
+          </div>
+
+          <p className="mt-12 text-gray-600 dark:text-gray-400">
+            Having issues? Reach out to our support team at{" "}
+            <a href="mailto:support@scholarbrood.com" className="text-[#E8B85F] hover:underline">
+              support@scholarbrood.com
+            </a>
           </p>
         </div>
-
-        {/* Subscription details */}
-        {subscription && (
-          <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6 space-y-4">
-            <section className="border-b pb-4">
-              <h2 className="text-xl font-semibold mb-2">Subscription Details</h2>
-              <p className="text-gray-600">ID: {subscription.id}</p>
-              <p className="text-gray-600">
-                Status:{" "}
-                <span className="capitalize font-medium text-green-600">{subscription.status}</span>
-              </p>
-              <p className="text-gray-600">
-                Start Date: {new Date(subscription.startTime).toLocaleDateString()}
-              </p>
-            </section>
-
-            <section className="border-b pb-4">
-              <h2 className="text-xl font-semibold mb-2">Subscriber Information</h2>
-              <p className="text-gray-600">
-                Name: {subscription.subscriber.name.given_name} {subscription.subscriber.name.surname}
-              </p>
-              <p className="text-gray-600">Email: {subscription.subscriber.email_address}</p>
-            </section>
-
-            <section className="border-b pb-4">
-              <h2 className="text-xl font-semibold mb-2">Billing Information</h2>
-              <p className="text-gray-600">
-                Next Billing Date: {new Date(subscription.billingInfo.nextBillingTime).toLocaleDateString()}
-              </p>
-              <p className="text-gray-600">Failed Payments: {subscription.billingInfo.failedPayments}</p>
-              <p className="text-gray-600">Cycles Completed: {subscription.billingInfo.cyclesCompleted}</p>
-            </section>
-          </div>
-        )}
-
-        {/* Links */}
-        <div className="mt-8 text-center flex flex-col sm:flex-row justify-center gap-4">
-          <Link
-            href="/billing"
-            className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-          >
-            View Billing →
-          </Link>
-          <Link
-            href="/"
-            className="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors"
-          >
-            Return to Home
-          </Link>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
