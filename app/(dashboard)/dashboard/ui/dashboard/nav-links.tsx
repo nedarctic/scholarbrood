@@ -4,7 +4,7 @@ import {
   HomeIcon,
   DocumentTextIcon,
   AcademicCapIcon,
-  ChartBarIcon,
+  CurrencyDollarIcon,
   UserCircleIcon,
   Cog6ToothIcon,
 } from '@heroicons/react/24/outline';
@@ -16,7 +16,7 @@ const links = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'My Tutorials', href: '/dashboard/tutorials', icon: DocumentTextIcon },
   { name: 'Academic Work', href: '/dashboard/work', icon: AcademicCapIcon },
-  { name: 'Progress', href: '/dashboard/progress', icon: ChartBarIcon },
+  { name: 'Billing', href: '/dashboard/billing', icon: CurrencyDollarIcon },
   { name: 'Profile', href: '/dashboard/profile', icon: UserCircleIcon },
   { name: 'Settings', href: '/dashboard/settings', icon: Cog6ToothIcon },
 ];
