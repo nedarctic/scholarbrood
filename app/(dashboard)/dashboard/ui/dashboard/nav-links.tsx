@@ -15,14 +15,25 @@ import { oswald } from '@/app/(app)/fonts';
 const links = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'My Tutorials', href: '/dashboard/tutorials', icon: DocumentTextIcon },
-  { name: 'Academic Work', href: '/dashboard/work', icon: AcademicCapIcon },
+  // { name: 'Orders', href: '/dashboard/order', icon: AcademicCapIcon },
   { name: 'Billing', href: '/dashboard/billing', icon: CurrencyDollarIcon },
   { name: 'Profile', href: '/dashboard/profile', icon: UserCircleIcon },
-  { name: 'Settings', href: '/dashboard/settings', icon: Cog6ToothIcon },
+  // { name: 'Settings', href: '/dashboard/settings', icon: Cog6ToothIcon },
 ];
 
-export default function NavLinks() {
+interface NavLinksProps {
+  onLinkClick?: () => void;
+}
+
+export default function NavLinks({ onLinkClick }: NavLinksProps) {
   const pathname = usePathname();
+
+  // Helper function to handle link clicks
+  const handleLinkClick = () => {
+    if (onLinkClick) {
+      onLinkClick();
+    }
+  };
 
   return (
     <nav className="space-y-2">
@@ -34,6 +45,7 @@ export default function NavLinks() {
           <Link
             key={link.name}
             href={link.href}
+            onClick={handleLinkClick}
             className={`${oswald.className} group relative flex h-12 items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium
               transition-all duration-300
               ${isActive 
@@ -54,7 +66,7 @@ export default function NavLinks() {
                 : 'text-gray-500 dark:text-gray-400 group-hover:text-[#E8B85F] dark:group-hover:text-[#E8B85F]'
               }`} />
             
-            <p className="hidden md:block flex-1">{link.name}</p>
+            <p className="block flex-1">{link.name}</p>
             
             {isActive && (
               <span className="ml-2 w-2 h-2 rounded-full bg-[#E8B85F] dark:bg-[#E8B85F] animate-pulse"></span>

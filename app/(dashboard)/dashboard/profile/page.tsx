@@ -196,10 +196,6 @@ export default function ProfilePage() {
               </div>
             </div>
           </div>
-          <button className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl border border-white/20 flex items-center gap-2 transition-all duration-300 hover:scale-105">
-            <Edit className="w-4 h-4" />
-            Edit Profile
-          </button>
         </div>
       </div>
 
