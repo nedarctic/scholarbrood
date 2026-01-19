@@ -33,7 +33,7 @@ export default function LoginPage() {
 
       if (error) throw error;
 
-      router.push("/protected");
+      router.push("/subscriptions");
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Login failed");
     } finally {

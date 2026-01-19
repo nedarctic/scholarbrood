@@ -27,7 +27,7 @@ export default async function SubscriptionsPage() {
 
   return (
     <PayPalProvider>
-      <main className="min-h-screen bg-background px-6 py-40">
+      <main className="min-h-screen bg-white px-6 py-40 text-black">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-14">
@@ -51,13 +51,13 @@ export default async function SubscriptionsPage() {
                   className={`relative flex flex-col rounded-2xl border p-6 z-0 shadow-sm transition
                     ${
                       isBestValue
-                        ? "border-primary shadow-lg scale-[1.02]"
+                        ? "border-border shadow-lg scale-[1.02]"
                         : "border-border"
                     }`}
                 >
                   {/* Badge */}
                   {isBestValue && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-semibold text-primary-foreground">
+                    <span className="border-black border-2 absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-semibold text-primary-foreground">
                       Best Value
                     </span>
                   )}

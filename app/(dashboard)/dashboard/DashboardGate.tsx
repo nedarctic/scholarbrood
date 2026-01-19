@@ -118,7 +118,7 @@ export default async function DashboardPage() {
                 </Link>
 
                 <Link
-                  href="/dashboard/order"
+                  href="/order"
                   className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-[#E8B85F]/5 to-transparent hover:from-[#E8B85F]/10 transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-3">
