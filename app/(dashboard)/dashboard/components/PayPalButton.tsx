@@ -68,7 +68,7 @@ const PayPalButton = ({amount}: {amount: number}) => {
                         createOrder={createOrder}
                         onApprove={onApprove}
                         onError={onError}
-                        style={{ layout: 'vertical' }}
+                        style={{ layout: 'horizontal', shape: "rect", disableMaxWidth: true, borderRadius: 4 }}
                     />
                 )}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
