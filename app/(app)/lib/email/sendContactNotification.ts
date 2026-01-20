@@ -1,3 +1,5 @@
+console.log("CONTACT EMAIL FUNCTION HIT");
+
 import nodemailer from "nodemailer";
 
 interface ContactEmailPayload {
