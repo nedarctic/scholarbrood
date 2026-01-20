@@ -8,15 +8,34 @@ interface ContactEmailPayload {
 }
 
 export async function sendContactNotification(payload: ContactEmailPayload) {
+  if (
+    !process.env.SMTP_HOST ||
+    !process.env.SMTP_PORT ||
+    !process.env.SMTP_SUPPORT_USER ||
+    !process.env.SMTP_SUPPORT_PASS
+  ) {
+    throw new Error("SMTP environment variables are missing");
+  }
+
+  const port = Number(process.env.SMTP_PORT);
+
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
-    secure: true,
+    port,
+    secure: port === 465,
     auth: {
       user: process.env.SMTP_SUPPORT_USER,
       pass: process.env.SMTP_SUPPORT_PASS,
     },
   });
+
+  console.log("SMTP CHECK", {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    user: !!process.env.SMTP_SUPPORT_USER,
+    pass: !!process.env.SMTP_SUPPORT_PASS,
+  });
+
 
   await transporter.sendMail({
     from: `"ScholarBrood Website" <${process.env.SMTP_SUPPORT_USER}>`,
