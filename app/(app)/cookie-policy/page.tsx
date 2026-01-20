@@ -1,7 +1,16 @@
-// app/cookie-policy/page.jsx
+'use client'
+
+import { useEffect, useState } from 'react';
+
 import { oswald } from '../fonts';
 
 export default function CookiePolicy() {
+  const [year, setYear] = useState<number>();
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  });
+
   return (
     <div className={`${oswald.className} py-20 min-h-screen bg-gray-900 text-gray-200`}>
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -50,7 +59,7 @@ export default function CookiePolicy() {
               <p className="text-lg leading-relaxed mb-6">
                 This Cookie Policy explains how ScholarBrood ("we," "us," or "our") uses cookies and similar tracking technologies when you visit our website at <a href="https://scholarbrood.com" className="text-[#E8B85F] hover:underline">https://scholarbrood.com</a> (the "Website") and use our academic and research support services (the "Services"). It explains what these technologies are, why we use them, and your rights to control our use of them.
               </p>
-              
+
               <div className="bg-amber-900/30 border-l-4 border-[#E8B85F] p-4">
                 <p className="text-amber-200">
                   <strong className="text-[#E8B85F]">Please note:</strong> In some cases, we may use cookies and similar tracking technologies that collect personal information, or information that becomes personal information if we combine it with other information. For more details about how we process your personal information, please review our <a href="/privacy-policy" className="text-[#E8B85F] font-bold hover:underline">Privacy Policy</a>.
@@ -65,16 +74,16 @@ export default function CookiePolicy() {
                 <h2 className="text-3xl font-bold text-[#E8B85F] mb-6 border-b pb-2 border-gray-700">
                   1. WHAT ARE COOKIES?
                 </h2>
-                
+
                 <div className="space-y-4">
                   <p>
                     Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners in order to make their websites work, or to work more efficiently, as well as to provide reporting information.
                   </p>
-                  
+
                   <p>
                     Cookies set by the website owner (in this case, ScholarBrood) are called "first-party cookies." Cookies set by parties other than the website owner are called "third-party cookies." Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics). The parties that set these third-party cookies can recognize your computer both when it visits the website in question and also when it visits certain other websites.
                   </p>
-                  
+
                   <div className="bg-gray-700 p-4 rounded border border-gray-600 mt-4">
                     <h3 className="font-bold text-gray-100 mb-2">Why do we use cookies?</h3>
                     <p>
@@ -89,36 +98,36 @@ export default function CookiePolicy() {
                 <h2 className="text-3xl font-bold text-[#E8B85F] mb-6 border-b pb-2 border-gray-700">
                   2. HOW WE USE COOKIES
                 </h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <p>
                       We use cookies for a variety of purposes, including:
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h3 className="font-bold text-[#E8B85F] mb-2">Essential Website Operations</h3>
                         <p className="text-sm">To enable basic functions of the website such as page navigation and access to secure areas.</p>
                       </div>
-                      
+
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h3 className="font-bold text-[#E8B85F] mb-2">Authentication and Security</h3>
                         <p className="text-sm">To keep you logged in as you navigate our site and to protect your account from unauthorized access.</p>
                       </div>
-                      
+
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h3 className="font-bold text-[#E8B85F] mb-2">Performance and Analytics</h3>
                         <p className="text-sm">To understand how visitors interact with our website so we can improve our services.</p>
                       </div>
-                      
+
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h3 className="font-bold text-[#E8B85F] mb-2">Personalization</h3>
                         <p className="text-sm">To remember your preferences and settings for future visits.</p>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-xl font-bold text-gray-100 mb-4">Specific Examples of Cookie Usage</h3>
                     <div className="space-y-3 ml-4">
@@ -148,12 +157,12 @@ export default function CookiePolicy() {
                 <h2 className="text-3xl font-bold text-[#E8B85F] mb-6 border-b pb-2 border-gray-700">
                   3. TYPES OF COOKIES WE USE
                 </h2>
-                
+
                 <div className="space-y-6">
                   <p>
                     The table below explains the types of cookies we use on our Website and why we use them:
                   </p>
-                  
+
                   <div className="overflow-x-auto">
                     <table className="min-w-full border-collapse border border-gray-600">
                       <thead>
@@ -180,7 +189,7 @@ export default function CookiePolicy() {
                             Session or up to 24 hours
                           </td>
                         </tr>
-                        
+
                         {/* Performance and Analytics Cookies */}
                         <tr>
                           <td className="border border-gray-600 p-3 font-bold text-gray-100">
@@ -196,7 +205,7 @@ export default function CookiePolicy() {
                             Up to 2 years
                           </td>
                         </tr>
-                        
+
                         {/* Functionality Cookies */}
                         <tr className="bg-gray-800/50">
                           <td className="border border-gray-600 p-3 font-bold text-gray-100">
@@ -212,7 +221,7 @@ export default function CookiePolicy() {
                             Up to 1 year
                           </td>
                         </tr>
-                        
+
                         {/* Targeting/Advertising Cookies */}
                         <tr>
                           <td className="border border-gray-600 p-3 font-bold text-gray-100">
@@ -228,7 +237,7 @@ export default function CookiePolicy() {
                             Up to 2 years
                           </td>
                         </tr>
-                        
+
                         {/* Social Media Cookies */}
                         <tr className="bg-gray-800/50">
                           <td className="border border-gray-600 p-3 font-bold text-gray-100">
@@ -247,7 +256,7 @@ export default function CookiePolicy() {
                       </tbody>
                     </table>
                   </div>
-                  
+
                   <div className="bg-blue-900/30 p-4 rounded border border-blue-800/50 mt-4">
                     <h3 className="font-bold text-blue-200 mb-2">About Third-Party Cookies</h3>
                     <p className="text-blue-100">
@@ -262,50 +271,50 @@ export default function CookiePolicy() {
                 <h2 className="text-3xl font-bold text-[#E8B85F] mb-6 border-b pb-2 border-gray-700">
                   4. HOW CAN YOU CONTROL COOKIES?
                 </h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-xl font-bold text-gray-100 mb-4">Browser Controls</h3>
                     <p className="mb-4">
                       You have the right to decide whether to accept or reject cookies. You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted. The way in which you can refuse cookies through your web browser controls varies from browser to browser.
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h4 className="font-bold text-[#E8B85F] mb-2">Google Chrome</h4>
                         <p className="text-sm">Settings → Privacy and Security → Cookies and other site data</p>
                       </div>
-                      
+
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h4 className="font-bold text-[#E8B85F] mb-2">Mozilla Firefox</h4>
                         <p className="text-sm">Options → Privacy & Security → Cookies and Site Data</p>
                       </div>
-                      
+
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h4 className="font-bold text-[#E8B85F] mb-2">Safari</h4>
                         <p className="text-sm">Preferences → Privacy → Cookies and website data</p>
                       </div>
-                      
+
                       <div className="bg-gray-700 p-4 rounded border border-gray-600">
                         <h4 className="font-bold text-[#E8B85F] mb-2">Microsoft Edge</h4>
                         <p className="text-sm">Settings → Cookies and site permissions → Cookies and site data</p>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-xl font-bold text-gray-100 mb-4">Cookie Consent Banner</h3>
                     <p className="mb-4">
                       When you first visit our Website, you will be presented with a cookie consent banner that allows you to accept or reject non-essential cookies. You can change your cookie preferences at any time by clicking on the "Cookie Settings" link in the footer of our Website.
                     </p>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-xl font-bold text-gray-100 mb-4">Third-Party Opt-Outs</h3>
                     <p className="mb-4">
                       For third-party cookies used for advertising and analytics, you can opt out through the following resources:
                     </p>
-                    
+
                     <div className="space-y-3 ml-4">
                       <div className="flex items-start">
                         <span className="text-[#E8B85F] mr-2">•</span>
@@ -327,7 +336,7 @@ export default function CookiePolicy() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-amber-900/30 p-4 rounded border border-amber-800/50">
                     <h3 className="font-bold text-amber-200 mb-2">Important Note About Essential Cookies</h3>
                     <p className="text-amber-100">
@@ -342,16 +351,16 @@ export default function CookiePolicy() {
                 <h2 className="text-3xl font-bold text-[#E8B85F] mb-6 border-b pb-2 border-gray-700">
                   5. HOW OFTEN WILL WE UPDATE THIS COOKIE POLICY?
                 </h2>
-                
+
                 <div className="space-y-4">
                   <p>
                     We may update this Cookie Policy from time to time in order to reflect, for example, changes to the cookies we use or for other operational, legal, or regulatory reasons. Please therefore revisit this Cookie Policy regularly to stay informed about our use of cookies and related technologies.
                   </p>
-                  
+
                   <p>
                     The date at the top of this Cookie Policy indicates when it was last updated. If we make material changes to this Cookie Policy, we will notify you by posting a prominent notice on our Website or by sending you a notification via email, where appropriate.
                   </p>
-                  
+
                   <div className="bg-gray-700 p-4 rounded border border-gray-600 mt-4">
                     <h3 className="font-bold text-gray-100 mb-2">Your Continued Use</h3>
                     <p>
@@ -366,13 +375,13 @@ export default function CookiePolicy() {
                 <h2 className="text-3xl font-bold text-[#E8B85F] mb-6 border-b pb-2 border-gray-700">
                   6. WHERE CAN YOU GET FURTHER INFORMATION?
                 </h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <p className="mb-4">
                       If you have any questions about our use of cookies or other technologies, please contact us at:
                     </p>
-                    
+
                     <div className="bg-gray-700 p-6 rounded border border-gray-600">
                       <p className="font-bold text-lg text-[#E8B85F] mb-2">ScholarBrood</p>
                       <p className="mb-2">Email: <a href="mailto:info@scholarbrood.com" className="text-[#E8B85F] hover:underline">info@scholarbrood.com</a></p>
@@ -380,26 +389,26 @@ export default function CookiePolicy() {
                       <p>Address: Myrtle Beach, SC 29572, United States</p>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-xl font-bold text-gray-100 mb-4">Related Policies</h3>
                     <p className="mb-4">
                       For more information about how we collect, use, and protect your personal information, please review our:
                     </p>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <a href="/privacy-policy" className="bg-gray-700 p-4 rounded border border-gray-600 hover:border-[#E8B85F] transition-colors group">
                         <h4 className="font-bold text-gray-100 group-hover:text-[#E8B85F] mb-2">Privacy Policy</h4>
                         <p className="text-sm text-gray-400">Learn about how we collect, use, and protect your personal information.</p>
                       </a>
-                      
+
                       <a href="/terms-of-service" className="bg-gray-700 p-4 rounded border border-gray-600 hover:border-[#E8B85F] transition-colors group">
                         <h4 className="font-bold text-gray-100 group-hover:text-[#E8B85F] mb-2">Terms of Service</h4>
                         <p className="text-sm text-gray-400">Review the terms and conditions governing your use of our services.</p>
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="bg-blue-900/30 p-4 rounded border border-blue-800/50">
                     <h3 className="font-bold text-blue-200 mb-2">Additional Resources</h3>
                     <p className="mb-2 text-blue-100">
@@ -427,7 +436,7 @@ export default function CookiePolicy() {
               <footer className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
                 <p className="text-lg font-bold text-[#E8B85F] mb-2">ScholarBrood</p>
                 <p>Academic, research & publication services</p>
-                <p className="mt-4 text-sm">© {new Date().getFullYear()} ScholarBrood. All rights reserved.</p>
+                <p className="mt-4 text-sm">© {year} ScholarBrood. All rights reserved.</p>
                 <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm">
                   <a href="/privacy-policy" className="text-[#E8B85F] hover:underline">Privacy Policy</a>
                   <span className="text-gray-600">•</span>

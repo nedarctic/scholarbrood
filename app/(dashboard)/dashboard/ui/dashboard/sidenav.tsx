@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { createClient } from '@/app/(app)/lib/supabase/client';
 
 export default function SideNav() {
-  const [year, setYear] = useState<number>(new Date().getFullYear());
+  const [year, setYear] = useState<number>();
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const client = createClient();
@@ -29,6 +29,10 @@ export default function SideNav() {
       console.error("Unexpected logout error:", err);
     }
   };
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  });
 
   return (
     <>
