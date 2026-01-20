@@ -45,7 +45,6 @@ export {
 // React Components
 export { default as PayPalProvider } from './components/PayPalProvider';
 export { default as SubscriptionButton } from './components/SubscriptionButton';
-export { default as BillingComponent } from './components/BillingComponent';
 
 // Utilities
 export { cn } from './lib/utils';
