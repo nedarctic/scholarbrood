@@ -91,7 +91,7 @@ function MobileDrawer({ isOpen, onClose, navItems, oswald }: DrawerProps) {
                 <div className="flex flex-col gap-4">
                   <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
                     <Link
-                      href="/login"
+                      href="/auth/login"
                       onClick={onClose}
                       className={`${oswald.className} block text-center py-3.5 text-lg font-semibold text-[#E8B85F] border-2 border-[#E8B85F]/60 rounded-lg
                         hover:bg-[#E8B85F]/10 hover:border-[#E8B85F] transition-all duration-300`}
@@ -101,7 +101,7 @@ function MobileDrawer({ isOpen, onClose, navItems, oswald }: DrawerProps) {
                   </motion.div>
                   <motion.div variants={buttonVariants} whileHover="hover" whileTap="tap">
                     <Link
-                      href="/signup"
+                      href="/auth/sign-up"
                       onClick={onClose}
                       className={`${oswald.className} block text-center py-3.5 text-lg font-semibold bg-gradient-to-r from-[#E8B85F] to-[#d4a44e] text-white rounded-lg shadow-md
                         hover:shadow-lg hover:shadow-[#E8B85F]/30 hover:brightness-110 transition-all duration-300`}

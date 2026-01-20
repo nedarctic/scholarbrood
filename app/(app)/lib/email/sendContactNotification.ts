@@ -13,13 +13,13 @@ export async function sendContactNotification(payload: ContactEmailPayload) {
     port: Number(process.env.SMTP_PORT),
     secure: true,
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+      user: process.env.SMTP_SUPPORT_USER,
+      pass: process.env.SMTP_SUPPORT_PASS,
     },
   });
 
   await transporter.sendMail({
-    from: `"ScholarBrood Website" <${process.env.SMTP_USER}>`,
+    from: `"ScholarBrood Website" <${process.env.SMTP_SUPPORT_USER}>`,
     to: "info@scholarbrood.com",
     replyTo: payload.email,
     subject: `📩 New Contact Message: ${payload.subject}`,
