@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { createClient } from "@/app/(app)/lib/supabase/server";
 import { storePayPalOrder } from "@/app/(app)/lib/db/paypal";
 
-export const dynamic = "force-dynamic"
-
 export async function POST(req: Request) {
   try {
     const supabase = await createClient();

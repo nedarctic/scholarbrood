@@ -5,8 +5,6 @@ import { StoredSubscription } from "@/app/(app)/types/subscription";
 import { StoreSubscription } from "@/app/(app)/lib/paypal/subscriptions";
 import { getPayPalPlanName } from "@/app/(app)/lib/paypal/paypal";
 
-export const dynamic = "force-dynamic"
-
 export async function GET(
 	request: NextRequest,
 	{ params }: { params: Promise<{ id: string }> }

@@ -3,8 +3,6 @@ import { createClient } from "@/app/(app)/lib/supabase/server";
 import { storeOrder } from "@/app/(app)/lib/db/orders";
 import { sendOrderNotification } from "@/app/(app)/lib/email/sendOrderNotification";
 
-export const dynamic = "force-dynamic"
-
 export async function POST(req: Request) {
   try {
     const supabase = await createClient();
