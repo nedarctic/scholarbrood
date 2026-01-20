@@ -185,7 +185,7 @@ export default async function DashboardPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <a
-                href="/dashboard/order"
+                href="/order"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-[#E8B85F] text-[#1C1C30] rounded-full text-lg sm:text-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-300"
               >
                 Start New Order
