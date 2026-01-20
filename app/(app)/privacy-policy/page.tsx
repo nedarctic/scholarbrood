@@ -1,6 +1,16 @@
+'use client'
+
 import { oswald } from '../fonts';
+import { useState, useEffect } from 'react';
 
 export default function PrivacyPolicy() {
+
+  const [ year, setYear ] = useState<number>();
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  });
+
   return (
     <div className={`${oswald.className} min-h-screen bg-gray-900 py-20 text-gray-200`}>
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -730,7 +740,7 @@ export default function PrivacyPolicy() {
               <footer className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
                 <p className="text-lg font-bold text-[#E8B85F] mb-2">ScholarBrood</p>
                 <p>Expert Academic Writing, Editing, Research, and Publication Support for Students and Researchers</p>
-                <p className="mt-4 text-sm">© {new Date().getFullYear()} ScholarBrood. All rights reserved.</p>
+                <p className="mt-4 text-sm">© {year} ScholarBrood. All rights reserved.</p>
               </footer>
             </div>
           </main>
