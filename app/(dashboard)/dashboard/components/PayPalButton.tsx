@@ -2,13 +2,10 @@
 
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { useState } from 'react';
-import type { PayPalOrderCapture } from "@/app/(dashboard)/dashboard/types/paypal";
-import { redirect } from 'next/navigation';
 
 const PayPalButton = ({amount}: {amount: number}) => {
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    const [txId, setTxId] = useState<string | undefined>("");
 
     const createOrder = (data: any, actions: any) => {
         return actions.order.create({

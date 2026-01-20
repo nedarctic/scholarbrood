@@ -5,6 +5,8 @@ import PayPalProvider from "@/app/(app)/components/PayPalProvider";
 import SubscriptionButton from "@/app/(app)/components/SubscriptionButton";
 import { SUBSCRIPTION_PLANS } from "@/app/(app)/config/paypal";
 
+export const dynamic = "force-dynamic"
+
 export default async function SubscriptionsPage() {
   const supabase = await createClient();
 

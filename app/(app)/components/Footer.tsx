@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube, FaReddit, FaTumblr } from "react-icons/fa";
 import { oswald } from "../fonts";
-import { Suspense, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
   

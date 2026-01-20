@@ -4,6 +4,8 @@ import type { PayPalOrderCapture } from "@/app/(dashboard)/dashboard/types/paypa
 import { storeOrderDetails } from "@/app/(dashboard)/dashboard/lib/paypal";
 import { createClient } from "@/app/(app)/lib/supabase/server";
 
+export const dynamic = "force-dynamic"
+
 export async function POST(req: NextRequest) {
     const supabase = await createClient();
 

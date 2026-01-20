@@ -2,6 +2,8 @@
 
 import { createClient } from "../supabase/client";
 
+export const dynamic = "force-dynamic"
+
 export async function signInWithGoogle() {
   const client = createClient();
   const { error } = await client.auth.signInWithOAuth({

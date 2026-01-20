@@ -3,6 +3,8 @@ import { Button } from "./ui/button";
 import { createClient } from "@/app/(app)/lib/supabase/server";
 import { LogoutButton } from "./logout-button";
 
+export const dynamic = "force-dynamic"
+
 export async function AuthButton() {
   const supabase = await createClient();
 

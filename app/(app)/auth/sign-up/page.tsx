@@ -20,6 +20,8 @@ import { oswald } from "@/app/(app)/fonts";
 import { createClient } from "@/app/(app)/lib/supabase/client";
 import { signInWithGoogle } from "@/app/(app)/lib/oauth/auth";
 
+export const dynamic = "force-dynamic"
+
 export default function SignUpPage() {
   const router = useRouter();
   const supabase = createClient();

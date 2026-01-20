@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Mail, Calendar, User, CreditCard } from "lucide-react";
 import { oswald } from "../fonts";
 
+export const dynamic = "force-dynamic"
+
 interface SubscriptionDetails {
   id: string;
   status: string;

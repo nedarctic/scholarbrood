@@ -7,6 +7,8 @@ import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 import { ArrowRight, Paperclip, X } from "lucide-react";
 import { oswald } from "../fonts";
 
+export const dynamic = "force-dynamic"
+
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
 const SERVICE_PRICING = {

@@ -9,6 +9,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/app/(app)/lib/supabase/client';
 
+export const dynamic = "force-dynamic"
+
 export default function SideNav() {
   const [year, setYear] = useState<number>();
   const [isOpen, setIsOpen] = useState(false);

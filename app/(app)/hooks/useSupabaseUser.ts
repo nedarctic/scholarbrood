@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { createClient } from "../lib/supabase/client";
 
+export const dynamic = "force-dynamic"
+
 export function useSupabaseUser() {
   const [user, setUser] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);

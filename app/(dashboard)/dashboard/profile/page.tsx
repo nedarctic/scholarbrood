@@ -12,10 +12,11 @@ import {
   Key,
   Clock,
   Verified,
-  Edit,
   LucideIcon
 } from "lucide-react";
 import { oswald } from "@/app/(app)/fonts";
+
+export const dynamic = "force-dynamic"
 
 // Type definitions based on Supabase Auth responses
 type UserMetadata = {

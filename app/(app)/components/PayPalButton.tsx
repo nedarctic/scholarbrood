@@ -2,6 +2,8 @@
 
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
+export const dynamic = "force-dynamic"
+
 export default function PayPalButton({
   amount,
   onSuccess,

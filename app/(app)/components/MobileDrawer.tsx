@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useSupabaseUser } from "@/app/(app)/hooks/useSupabaseUser";
 import { LogoutButton } from "./logout-button";
 
+export const dynamic = "force-dynamic"
+
 type NavItem = {
   label: string;
   href: string;

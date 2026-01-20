@@ -4,6 +4,8 @@ import { oswald } from "@/app/(app)/fonts";
 import { useEffect, useState } from "react";
 import { createClient } from "@/app/(app)/lib/supabase/client";
 
+export const dynamic = "force-dynamic"
+
 export default function SuccessPage() {
   const [user, setUser] = useState<any>(null);
 

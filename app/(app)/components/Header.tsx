@@ -10,6 +10,8 @@ import { useRouter } from "next/navigation";
 import { createClient } from "../lib/supabase/client";
 import { useSupabaseUser } from "@/app/(app)/hooks/useSupabaseUser";
 
+export const dynamic = "force-dynamic"
+
 export default function Header() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);

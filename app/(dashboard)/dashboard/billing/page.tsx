@@ -11,6 +11,8 @@ import type {
   User
 } from '@supabase/supabase-js'
 
+export const dynamic = "force-dynamic"
+
 async function getUserData(supabase: SupabaseClient): Promise<User | null> {
   const { data, error }: UserResponse = await supabase.auth.getUser()
   if (error) console.error(error)

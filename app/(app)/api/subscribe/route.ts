@@ -3,6 +3,8 @@ import { storeNewsletterSubscription } from "@/app/(app)/lib/db/subscription";
 import { createClient } from "@/app/(app)/lib/supabase/server";
 import { sendNewsletterNotification } from "@/app/(app)/lib/email/sendNewsletterNotification";
 
+export const dynamic = "force-dynamic"
+
 export async function POST(req: Request) {
   try {
     const supabase = await createClient();

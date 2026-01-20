@@ -7,6 +7,8 @@ import { oswald } from "@/app/(app)/fonts";
 import { getPayPalPlanName } from "@/app/(app)/lib/paypal/paypal";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic"
+
 const supabase = async () => await createClient();
 
 async function UserDetails() {

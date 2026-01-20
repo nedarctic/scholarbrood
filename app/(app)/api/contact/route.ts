@@ -3,6 +3,8 @@ import { storeContactMessage } from "@/app/(app)/lib/db/contact";
 import { createClient } from "@/app/(app)/lib/supabase/server"
 import { sendContactNotification } from "@/app/(app)/lib/email/sendContactNotification";
 
+export const dynamic = "force-dynamic"
+
 export async function POST(req: Request) {
 
     const supabase = await createClient();

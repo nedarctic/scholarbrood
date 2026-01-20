@@ -4,8 +4,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { createClient } from "../supabase/server";
 
-// This is a template implementation - you'll need to adapt this to your database
-// Replace these functions with your actual database operations
+export const dynamic = "force-dynamic"
 
 export function isActiveSubscription(sub: StoredSubscription | null) {
 	if (!sub) return false;
