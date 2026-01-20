@@ -37,9 +37,11 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
   const extractHeadings = (html: string) => {
     const h2Matches = html.match(/<h2[^>]*>([^<]+)<\/h2>/g) || [];
     const h3Matches = html.match(/<h3[^>]*>([^<]+)<\/h3>/g) || [];
-    return [...h2Matches, ...h3Matches].map(match => 
-      match.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, '')
-    ).slice(0, 6);
+    return [...h2Matches, ...h3Matches].map((match, idx) => (
+      <li key={idx}>
+        {match.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, '')}
+      </li>
+    ));
   };
 
   const headings = extractHeadings(post.content);
@@ -73,7 +75,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
         {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-black/60 z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20 z-10" />
-        
+
         {/* Dynamic Image */}
         <Image
           src={post.image}
@@ -151,11 +153,10 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               <div className="flex items-center gap-4">
                 <button
                   onClick={() => setIsBookmarked(!isBookmarked)}
-                  className={`p-3 rounded-full backdrop-blur-md transition-all duration-300 ${
-                    isBookmarked
+                  className={`p-3 rounded-full backdrop-blur-md transition-all duration-300 ${isBookmarked
                       ? 'bg-[#E8B85F]/20 border-[#E8B85F]/40 text-[#E8B85F]'
                       : 'bg-white/10 border-white/20 text-white/70 hover:text-[#E8B85F] hover:border-[#E8B85F]/40'
-                  } border`}
+                    } border`}
                 >
                   <Bookmark size={20} fill={isBookmarked ? "currentColor" : "none"} />
                 </button>
@@ -239,11 +240,11 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-[#E8B85F] to-transparent rounded-full" />
               <div className="pl-8">
                 <div className="text-5xl font-bold text-[#E8B85F] mb-4 leading-none">"</div>
-                <div 
+                <div
                   className="text-2xl md:text-3xl leading-relaxed text-gray-800 dark:text-gray-200 font-light italic pl-4"
-                  dangerouslySetInnerHTML={{ 
-                    __html: post.content.match(/<div class="blog-intro">(.*?)<\/div>/)?.[1] || 
-                    post.content.substring(0, post.content.indexOf('</p>') + 4)
+                  dangerouslySetInnerHTML={{
+                    __html: post.content.match(/<div class="blog-intro">(.*?)<\/div>/)?.[1] ||
+                      post.content.substring(0, post.content.indexOf('</p>') + 4)
                   }}
                 />
               </div>
@@ -405,7 +406,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               `}</style>
 
               {/* Render Content */}
-              <div 
+              <div
                 className="blog-content"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
@@ -506,11 +507,10 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
                   </Link>
                   <button
                     onClick={() => setIsBookmarked(!isBookmarked)}
-                    className={`inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full border-2 transition-all duration-400 ${
-                      isBookmarked
+                    className={`inline-flex items-center justify-center gap-3 px-8 py-5 rounded-full border-2 transition-all duration-400 ${isBookmarked
                         ? 'bg-[#E8B85F]/10 border-[#E8B85F] text-[#E8B85F]'
                         : 'border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-[#E8B85F] hover:text-[#E8B85F]'
-                    }`}
+                      }`}
                   >
                     <Bookmark size={20} fill={isBookmarked ? "currentColor" : "none"} />
                     {isBookmarked ? 'Bookmarked' : 'Save for Later'}
