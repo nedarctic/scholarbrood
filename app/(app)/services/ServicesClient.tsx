@@ -146,8 +146,8 @@ export default function ServicesClient() {
                   </p>
 
                   <ul className="space-y-4">
-                    {section.items.map((item) => (
-                      <li key={item} className="flex items-start gap-4">
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-4">
                         <CheckCircle2 className="w-6 h-6 text-[#E8B85F] flex-shrink-0 mt-0.5" />
                         <span className={`${oswald.className} text-gray-700 dark:text-gray-200`}>{item}</span>
                       </li>
@@ -159,8 +159,8 @@ export default function ServicesClient() {
                     <div className="p-6 bg-gradient-to-br from-[#E8B85F]/10 to-transparent dark:from-[#E8B85F]/5 border border-[#E8B85F]/30 rounded-2xl">
                       <h4 className="font-bold text-xl mb-4 text-[#E8B85F]">The ScholarBrood Efficiency</h4>
                       <ul className="space-y-3">
-                        {section.efficiency.map((benefit) => (
-                          <li key={benefit} className="flex items-start gap-3">
+                        {section.efficiency.map((benefit, i) => (
+                          <li key={i} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-[#E8B85F] flex-shrink-0 mt-0.5" />
                             <span className={`${oswald.className} text-gray-700 dark:text-gray-200`}>{benefit}</span>
                           </li>
@@ -211,8 +211,8 @@ export default function ServicesClient() {
                 "Affordable student-friendly pricing",
                 "Fast delivery with dedicated support",
                 "Humanized writing that passes AI detection"
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-4">
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
                   <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-[#E8B85F] flex-shrink-0" />
                   <p className={`${oswald.className} text-lg sm:text-xl text-gray-700 dark:text-gray-200`}>{item}</p>
                 </div>

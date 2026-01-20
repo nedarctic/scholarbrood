@@ -74,9 +74,9 @@ export default function Header() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-10">
           <nav className="flex items-center space-x-10">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <motion.div
-                key={item.label}
+                key={index}
                 whileHover={{ y: -3, scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
               >

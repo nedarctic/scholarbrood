@@ -59,7 +59,7 @@ function MobileDrawer({ isOpen, onClose, navItems, oswald }: DrawerProps) {
             <div className="px-8 py-16 flex flex-col space-y-6">
               {navItems.map((item, i) => (
                 <motion.a
-                  key={item.label}
+                  key={i}
                   href={item.href}
                   onClick={onClose}
                   initial={{ opacity: 0, x: 30 }}

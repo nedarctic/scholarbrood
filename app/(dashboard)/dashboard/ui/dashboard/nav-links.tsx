@@ -37,13 +37,13 @@ export default function NavLinks({ onLinkClick }: NavLinksProps) {
 
   return (
     <nav className="space-y-2">
-      {links.map((link) => {
+      {links.map((link, index) => {
         const LinkIcon = link.icon;
         const isActive = pathname === link.href;
         
         return (
           <Link
-            key={link.name}
+            key={index}
             href={link.href}
             onClick={handleLinkClick}
             className={`${oswald.className} group relative flex h-12 items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium

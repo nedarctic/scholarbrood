@@ -184,7 +184,7 @@ export default function TutorialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {subscriptionPlans.map((plan, index) => (
               <motion.div
-                key={plan.name}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -253,7 +253,7 @@ export default function TutorialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {trainingCategories.map((category, index) => (
               <motion.div
-                key={category.title}
+                key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -377,7 +377,7 @@ export default function TutorialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {trustFeatures.map((feature, index) => (
               <motion.div
-                key={feature.title}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

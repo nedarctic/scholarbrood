@@ -110,9 +110,9 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="order-2 md:order-3 flex justify-center md:justify-end">
             <div className="flex gap-5">
-              {socialLinks.map(({ Icon, href }) => (
+              {socialLinks.map(({ Icon, href }, index) => (
                 <a
-                  key={href}
+                  key={index}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"

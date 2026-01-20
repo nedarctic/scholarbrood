@@ -68,7 +68,7 @@ export default function Blog() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
           {blogPosts.slice(0, 2).map((post, i) => (
             <motion.div
-              key={post.title}
+              key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -117,7 +117,7 @@ export default function Blog() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
             {blogPosts.slice(2, blogPosts.length).map((post, i) => (
               <motion.article
-                key={post.title}
+                key={i}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
