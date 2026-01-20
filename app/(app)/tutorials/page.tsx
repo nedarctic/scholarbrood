@@ -16,7 +16,7 @@ const subscriptionPlans = [
     features: [
       "24-hour full access",
       "Join live sessions",
-      "Basic whiteboard access",
+      "Basic access",
       "Download course materials"
     ],
     popular: false,
@@ -30,7 +30,7 @@ const subscriptionPlans = [
     features: [
       "7-day full access",
       "All live sessions",
-      "Advanced whiteboard tools",
+      "Advanced learning tools",
       "Priority support",
       "Download all materials"
     ],
@@ -45,7 +45,7 @@ const subscriptionPlans = [
     features: [
       "30-day full access",
       "Unlimited live sessions",
-      "Full whiteboard suite",
+      "Full learning suite",
       "Priority 24/7 support",
       "Personal progress tracking",
       "Weekly feedback sessions"
@@ -111,8 +111,8 @@ const trustFeatures = [
     icon: <MessageSquare className="w-6 h-6" />
   },
   {
-    title: "Interactive Tools",
-    description: "Whiteboard, code editors, and collaboration tools",
+    title: "Interactive Learning",
+    description: "Engaging tools and collaborative sessions",
     icon: <Edit className="w-6 h-6" />
   },
   {
@@ -274,102 +274,91 @@ export default function TutorialsPage() {
         </div>
       </section>
 
-      {/* Interactive Whiteboard Area */}
+      {/* YouTube Video Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4 text-[#E8B85F]">
+              Master Your Skills with ScholarBrood
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+              Giving students and researchers hyped-up skills to excellent academic work and resources for learning.
+            </p>
+          </motion.div>
+
+          {/* Responsive YouTube Video Embed */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-2xl"
+          >
+            <div className="relative pb-[56.25%] h-0"> {/* 16:9 Aspect Ratio */}
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/OodL9HUjdcU"
+                title="Master Your Skills with ScholarBrood"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+            
+            {/* Optional: Video Overlay Decoration */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#E8B85F]/10 rounded-full blur-xl" />
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#E8B85F]/10 rounded-full blur-xl" />
+          </motion.div>
+
+          {/* Video Benefits */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-xl"
             >
-              <h2 className="text-4xl font-bold mb-4 text-[#E8B85F]">
-                Live Interactive Whiteboard
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                Experience real-time collaboration with our advanced whiteboard platform. Join live sessions with video tiles, shared notes, and interactive tools that make learning engaging and effective.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center">
-                  <Video className="w-5 h-5 text-[#E8B85F] mr-3" />
-                  <span>Live video conferencing with instructors</span>
-                </li>
-                <li className="flex items-center">
-                  <Edit className="w-5 h-5 text-[#E8B85F] mr-3" />
-                  <span>Real-time collaborative whiteboard</span>
-                </li>
-                <li className="flex items-center">
-                  <Users className="w-5 h-5 text-[#E8B85F] mr-3" />
-                  <span>Group sessions with peer interaction</span>
-                </li>
-                <li className="flex items-center">
-                  <MessageSquare className="w-5 h-5 text-[#E8B85F] mr-3" />
-                  <span>Instant Q&A and feedback</span>
-                </li>
-              </ul>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-full bg-[#E8B85F] text-white font-bold hover:bg-[#E8B85F]/90 transition-colors"
-              >
-                Try Demo Session
-              </motion.button>
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#E8B85F]/10 rounded-full flex items-center justify-center">
+                <Play className="w-6 h-6 text-[#E8B85F]" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Learn Anytime</h3>
+              <p className="text-gray-600 dark:text-gray-400">Access video tutorials 24/7 from anywhere</p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-xl"
             >
-              {/* Whiteboard Mockup */}
-              <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
-                <div className="bg-gray-800 p-4 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  </div>
-                  <div className="text-white text-sm">Live Whiteboard Session</div>
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-gray-400" />
-                    <span className="text-gray-400 text-sm">12 online</span>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  {/* Video Tiles */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="aspect-video bg-gray-700 rounded-lg flex items-center justify-center">
-                        <div className="text-gray-400">Video {i}</div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Whiteboard Content */}
-                  <div className="bg-white rounded-lg p-4 h-64">
-                    <div className="flex items-center mb-4">
-                      <div className="w-8 h-8 rounded-full bg-[#E8B85F] flex items-center justify-center text-white mr-3">
-                        T
-                      </div>
-                      <div>
-                        <div className="font-bold">Academic Research Structure</div>
-                        <div className="text-sm text-gray-600">Live session with Dr. Nicholas Ogot</div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <div className="h-1 bg-blue-500 rounded w-3/4"></div>
-                      <div className="h-1 bg-green-500 rounded w-1/2"></div>
-                      <div className="h-1 bg-purple-500 rounded w-2/3"></div>
-                      <div className="text-sm text-gray-500 mt-4">Introduction → Literature Review → Methodology → Analysis</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#E8B85F]/10 rounded-full flex items-center justify-center">
+                <Users className="w-6 h-6 text-[#E8B85F]" />
               </div>
+              <h3 className="text-xl font-bold mb-2">Expert Guidance</h3>
+              <p className="text-gray-600 dark:text-gray-400">Learn from experienced academic professionals</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-center p-6 bg-gray-50 dark:bg-gray-900 rounded-xl"
+            >
+              <div className="w-12 h-12 mx-auto mb-4 bg-[#E8B85F]/10 rounded-full flex items-center justify-center">
+                <Target className="w-6 h-6 text-[#E8B85F]" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Practical Skills</h3>
+              <p className="text-gray-600 dark:text-gray-400">Get real-world academic and research skills</p>
             </motion.div>
           </div>
         </div>
@@ -444,7 +433,7 @@ export default function TutorialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
-              onClick={() => router.push("/contact")}
+                onClick={() => router.push("/contact")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 rounded-full bg-[#E8B85F] text-white text-lg font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center"
@@ -455,10 +444,11 @@ export default function TutorialsPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => window.open('https://youtu.be/OodL9HUjdcU', '_blank')}
                 className="px-8 py-4 rounded-full border-2 border-[#E8B85F] text-[#E8B85F] text-lg font-bold hover:bg-[#E8B85F]/10 transition-colors flex items-center justify-center"
               >
                 <Play className="w-5 h-5 mr-2" />
-                Watch Demo
+                Watch Video
               </motion.button>
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-6">
