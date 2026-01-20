@@ -20,7 +20,7 @@ export async function sendContactNotification(payload: ContactEmailPayload) {
 
   await transporter.sendMail({
     from: `"ScholarBrood Website" <${process.env.SMTP_SUPPORT_USER}>`,
-    to: "info@scholarbrood.com",
+    to: "support@scholarbrood.com",
     replyTo: payload.email,
     subject: `📩 New Contact Message: ${payload.subject}`,
     html: `
