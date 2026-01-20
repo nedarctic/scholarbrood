@@ -1,21 +1,31 @@
+"use client";
+
 import { oswald } from "@/app/(app)/fonts";
-import { fetchOrderDetails } from "../lib/paypal";
-import { createClient } from "@/app/(app)/lib/supabase/server";
+import { useEffect, useState } from "react";
+import { createClient } from "@/app/(app)/lib/supabase/client";
 
-export default async function (){
+export default function SuccessPage() {
+  const [user, setUser] = useState<any>(null);
 
-    const supabase = await createClient();
-    const userDetails = supabase.auth.getUser();
+  useEffect(() => {
+    const supabase = createClient();
 
-    if(!userDetails) {
-        console.log("User details not found");
-    }
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user);
+    });
+  }, []);
 
-    console.log("User details:", userDetails);
+  return (
+    <div
+      className={`${oswald.className} min-h-screen flex flex-col items-center justify-center`}
+    >
+      <h1 className="text-3xl font-bold mb-4">Success!</h1>
 
-    return(
-        <div className={`${oswald.className} flex flex-col justify-content align-items`}>
-            <p>Success!</p>
-        </div>
-    );
+      {user ? (
+        <p className="text-lg">Thank you, {user.email}</p>
+      ) : (
+        <p className="text-lg">Finalizing your session…</p>
+      )}
+    </div>
+  );
 }

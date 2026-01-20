@@ -1,18 +1,20 @@
 import { blogPosts } from '../blogData';
 import BlogPostClient from './BlogPostClient';
 import { oswald } from '@/app/(app)/fonts';
+import { Suspense } from 'react';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
     return blogPosts.map((post) => ({
-        id: post.slug,
+        slug: post.slug,
     }));
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }>; }) {
-    
-    const { slug } = await params;
-
-    const post = blogPosts.find((p) => p.slug === slug);
+export default function BlogPostPage({
+    params,
+}: {
+    params: { slug: string };
+}) {
+    const post = blogPosts.find((p) => p.slug === params.slug);
 
     if (!post) {
         return (
@@ -22,5 +24,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         );
     }
 
-    return <BlogPostClient post={post} />;
+    return (
+        <Suspense fallback={<div className={`${oswald.className} min-h-screen flex flex-col justify-center items-center`}>
+            <p className={`${oswald.className} text-xl dark:text-white text-black`}>Loading...</p>
+        </div>}>
+            <BlogPostClient post={post} />
+        </Suspense>
+    );
 }
