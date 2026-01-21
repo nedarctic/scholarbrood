@@ -406,7 +406,7 @@ async function ActivityTimeline() {
       {activities.map((activity, index) => {
         const Icon = activity.icon;
         return (
-          <div key={index} className="relative flex items-start gap-3 sm:gap-4 pl-8 sm:pl-12 pb-6 sm:pb-8 last:pb-0">
+          <div key={activity.action} className="relative flex items-start gap-3 sm:gap-4 pl-8 sm:pl-12 pb-6 sm:pb-8 last:pb-0">
             <div className="absolute left-2 sm:left-4 top-1 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-[#E8B85F] border-2 sm:border-4 border-white dark:border-[#1C1C30]"></div>
             <div className="flex-1 min-w-0">
               <p className="text-sm sm:text-base font-medium truncate">{activity.action}</p>
@@ -445,7 +445,7 @@ async function AccountStatus() {
   return (
     <div className="space-y-2 sm:space-y-4">
       {statuses.map((status, index) => (
-        <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-[#1C1C30]/50 rounded-xl">
+        <div key={status.label} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-[#1C1C30]/50 rounded-xl">
           <span className="text-sm sm:text-base font-medium truncate">{status.label}</span>
           <VerificationBadge verified={status.verified} label={status.verified ? 'Verified' : 'Pending'} />
         </div>
@@ -461,7 +461,7 @@ async function ProvidersList() {
   return (
     <div className="space-y-3 sm:space-y-4">
       {providers.map((provider, index) => (
-        <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-[#1C1C30]/50 rounded-xl">
+        <div key={provider[0]} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-[#1C1C30]/50 rounded-xl">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-[#E8B85F]/10 to-[#E8B85F]/5 flex items-center justify-center flex-shrink-0">
               {provider === 'google' ? (

@@ -120,7 +120,7 @@ export default function AboutClient() {
               "CV, SOP & Academic Documents — crafting statements, personal essays, and academic CVs to support applications, scholarships, or further studies."
             ].map((service, i) => (
               <motion.div
-                key={i}
+                key={service}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -171,7 +171,7 @@ export default function AboutClient() {
               { icon: <Star className="w-12 h-12" />, title: "Student-Centered Support", desc: "We focus on your success — helping you meet academic goals, save time, and reduce stress." },
             ].map((item, i) => (
               <motion.div
-                key={i}
+                key={item.title}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

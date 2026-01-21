@@ -45,7 +45,7 @@ export default function RefundPolicy() {
                                     '8. Policy Updates'
                                 ].map((item, index) => (
                                     <a
-                                        key={index}
+                                        key={item}
                                         href={`#refund-section-${index + 1}`}
                                         className="block text-sm hover:text-[#E8B85F] transition-all text-gray-300 hover:pl-2"
                                     >

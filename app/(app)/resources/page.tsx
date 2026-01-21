@@ -93,7 +93,7 @@ export default function Resources() {
 
           {resources.map((resource, i) => (
             <motion.div
-              key={i}
+              key={resource.title}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

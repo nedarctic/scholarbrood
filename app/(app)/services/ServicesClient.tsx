@@ -212,7 +212,7 @@ export default function ServicesClient() {
                 "Fast delivery with dedicated support",
                 "Humanized writing that passes AI detection"
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
+                <div key={item} className="flex items-start gap-4">
                   <CheckCircle2 className="w-7 h-7 sm:w-8 sm:h-8 text-[#E8B85F] flex-shrink-0" />
                   <p className={`${oswald.className} text-lg sm:text-xl text-gray-700 dark:text-gray-200`}>{item}</p>
                 </div>

@@ -152,7 +152,7 @@ async function BillingComponent() {
               (link, id) =>
                 link.rel === 'approve' && (
                   <a
-                    key={id}
+                    key={link.href}
                     href={link.href}
                     target="_blank"
                     className="inline-flex items-center justify-center px-8 py-4 bg-[#E8B85F] text-[#1C1C30] font-semibold rounded-full shadow-xl hover:shadow-2xl transition"

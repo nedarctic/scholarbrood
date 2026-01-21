@@ -91,7 +91,7 @@ export default function OrderForm() {
               className={`${oswald.className} text-white w-full p-4 rounded-xl bg-white/10 border border-white/30`}
             >
               {Object.keys(SERVICE_PRICING).map((s, i) => (
-                <option key={i} value={s} className="text-black">{s}</option>
+                <option key={s} value={s} className="text-black">{s}</option>
               ))}
             </select>
           )}

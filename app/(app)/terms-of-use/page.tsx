@@ -50,7 +50,7 @@ export default function TermsOfService() {
                   '13. Contact Information'
                 ].map((item, index) => (
                   <a
-                    key={index}
+                    key={item}
                     href={`#section-${index + 1}`}
                     className="block text-sm hover:text-[#E8B85F] text-gray-300 hover:pl-2 transition-all"
                   >

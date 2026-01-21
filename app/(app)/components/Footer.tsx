@@ -75,7 +75,7 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 {quickLinks.map(({ label, href }) => (
-                  <li key={label}>
+                  <li key={href}>
                     <Link
                       href={href}
                       className={`${oswald.className} text-gray-400 hover:text-[#E8B85F] transition block`}
@@ -94,7 +94,7 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2">
                 {policyLinks.map((item, index) => (
-                  <li key={index}>
+                  <li key={item.label}>
                     <Link
                       href={item.path}
                       className={`${oswald.className} text-gray-400 hover:text-[#E8B85F] transition block`}

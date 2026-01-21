@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
                   '15. REVIEW, UPDATE, OR DELETE DATA'
                 ].map((item, index) => (
                   <a
-                    key={index}
+                    key={item}
                     href={`#section-${index + 1}`}
                     className="block text-sm hover:text-[#daa94e] transition-all text-gray-300 hover:pl-2"
                   >
@@ -175,7 +175,7 @@ export default function PrivacyPolicy() {
                         'contact preferences',
                         'passwords'
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center">
+                        <div key={item} className="flex items-center">
                           <span className="text-[#daa94e] mr-2">•</span>
                           <span>{item}</span>
                         </div>
@@ -249,7 +249,7 @@ export default function PrivacyPolicy() {
                     "To enable user-to-user communications. We may process your information if you choose to use any of our offerings that allow for communication with another user.",
                     "To save or protect an individual's vital interest. We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm."
                   ].map((item, index) => (
-                    <div key={index} className="flex items-start">
+                    <div key={item} className="flex items-start">
                       <span className="text-[#daa94e] mr-2">•</span>
                       <span>{item}</span>
                     </div>
@@ -321,7 +321,7 @@ export default function PrivacyPolicy() {
                         "If the information is publicly available and is specified by the regulations",
                         "We may disclose de-identified information for approved research or statistics projects, subject to ethics oversight and confidentiality commitments"
                       ].map((item, index) => (
-                        <div key={index} className="flex items-start">
+                        <div key={item} className="flex items-start">
                           <span className="text-[#daa94e] mr-2">•</span>
                           <span>{item}</span>
                         </div>
@@ -522,7 +522,7 @@ export default function PrivacyPolicy() {
                             ['K. Inferences drawn from collected personal information', 'Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual\'s preferences and characteristics', 'NO'],
                             ['L. Sensitive personal Information', '', 'NO']
                           ].map((row, index) => (
-                            <tr key={index} className="even:bg-gray-800/50">
+                            <tr key={row[0]} className="even:bg-gray-800/50">
                               <td className="border border-gray-600 p-2">{row[0]}</td>
                               <td className="border border-gray-600 p-2">{row[1]}</td>
                               <td className="border border-gray-600 p-2 font-bold text-[#daa94e]">{row[2]}</td>
@@ -576,7 +576,7 @@ export default function PrivacyPolicy() {
                         "Right to non-discrimination for exercising your rights",
                         "Right to opt out of the processing of your personal data if it is used for targeted advertising (or sharing as defined under California's privacy law), the sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects ('profiling')"
                       ].map((item, index) => (
-                        <div key={index} className="flex items-start">
+                        <div key={item} className="flex items-start">
                           <span className="text-[#daa94e] mr-2">•</span>
                           <span>{item}</span>
                         </div>
@@ -597,7 +597,7 @@ export default function PrivacyPolicy() {
                         "Right to limit use and disclosure of sensitive personal data (as permitted by applicable law, including the privacy law in California)",
                         "Right to opt out of the collection of sensitive data and personal data collected through the operation of a voice or facial recognition feature (as permitted by applicable law, including the privacy law in Florida)"
                       ].map((item, index) => (
-                        <div key={index} className="flex items-start">
+                        <div key={item} className="flex items-start">
                           <span className="text-[#daa94e] mr-2">•</span>
                           <span>{item}</span>
                         </div>
@@ -654,7 +654,7 @@ export default function PrivacyPolicy() {
                         "manage your account with us",
                         "confirm your identity and protect your account"
                       ].map((item, index) => (
-                        <div key={index} className="flex items-start">
+                        <div key={item} className="flex items-start">
                           <span className="text-[#daa94e] mr-2">•</span>
                           <span>{item}</span>
                         </div>

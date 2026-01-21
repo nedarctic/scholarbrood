@@ -41,7 +41,7 @@ export default function CookiePolicy() {
                   '6. WHERE CAN YOU GET FURTHER INFORMATION?'
                 ].map((item, index) => (
                   <a
-                    key={index}
+                    key={item}
                     href={`#section-${index + 1}`}
                     className="block text-sm hover:text-[#E8B85F] transition-all text-gray-300 hover:pl-2"
                   >

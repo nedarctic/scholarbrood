@@ -184,7 +184,7 @@ export default function TutorialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {subscriptionPlans.map((plan, index) => (
               <motion.div
-                key={index}
+                key={plan.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -210,7 +210,7 @@ export default function TutorialsPage() {
 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center">
+                    <li key={feature} className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
                       <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </li>
@@ -253,7 +253,7 @@ export default function TutorialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {trainingCategories.map((category, index) => (
               <motion.div
-                key={index}
+                key={category.description}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

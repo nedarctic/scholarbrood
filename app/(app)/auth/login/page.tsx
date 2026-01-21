@@ -205,7 +205,7 @@ export default function LoginPage() {
               <div className="mt-6 flex -space-x-2">
                 {["/student1.jpeg", "/student2.jpeg", "/student3.jpeg"].map((src, i) => (
                   <img
-                    key={i}
+                    key={src}
                     src={src}
                     alt={`Learner ${i + 1}`}
                     width={40}

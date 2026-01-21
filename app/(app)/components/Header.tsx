@@ -76,7 +76,7 @@ export default function Header() {
           <nav className="flex items-center space-x-10">
             {navItems.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.label}
                 whileHover={{ y: -3, scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
               >

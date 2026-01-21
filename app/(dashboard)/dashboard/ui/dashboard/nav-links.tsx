@@ -43,7 +43,7 @@ export default function NavLinks({ onLinkClick }: NavLinksProps) {
         
         return (
           <Link
-            key={index}
+            key={link.href}
             href={link.href}
             onClick={handleLinkClick}
             className={`${oswald.className} group relative flex h-12 items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium
