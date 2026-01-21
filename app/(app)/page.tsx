@@ -161,7 +161,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((s, i) => (
                 <motion.article
-                  key={i}
+                  key={s.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -230,7 +230,7 @@ export default function Home() {
                 "On-time delivery, every time",
               ].map((item, idx) => (
                 <li
-                  key={idx}
+                  key={item}
                   className={`${oswald.className} flex items-start gap-3 bg-white dark:bg-[#1C1C30]/70 p-4 rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm`}
                 >
                   <span className="mt-1 text-[#E8B85F] font-bold">✔</span>
@@ -251,7 +251,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {testimonials.map((t, i) => (
                 <motion.figure
-                  key={i}
+                  key={t.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

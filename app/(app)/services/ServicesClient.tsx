@@ -127,7 +127,7 @@ export default function ServicesClient() {
             }
           ].map((section, idx) => (
             <motion.div
-              key={idx}
+              key={section.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -147,7 +147,7 @@ export default function ServicesClient() {
 
                   <ul className="space-y-4">
                     {section.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-4">
+                      <li key={item} className="flex items-start gap-4">
                         <CheckCircle2 className="w-6 h-6 text-[#E8B85F] flex-shrink-0 mt-0.5" />
                         <span className={`${oswald.className} text-gray-700 dark:text-gray-200`}>{item}</span>
                       </li>
@@ -160,7 +160,7 @@ export default function ServicesClient() {
                       <h4 className="font-bold text-xl mb-4 text-[#E8B85F]">The ScholarBrood Efficiency</h4>
                       <ul className="space-y-3">
                         {section.efficiency.map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-3">
+                          <li key={benefit} className="flex items-start gap-3">
                             <CheckCircle2 className="w-5 h-5 text-[#E8B85F] flex-shrink-0 mt-0.5" />
                             <span className={`${oswald.className} text-gray-700 dark:text-gray-200`}>{benefit}</span>
                           </li>

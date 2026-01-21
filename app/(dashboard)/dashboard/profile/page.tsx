@@ -461,7 +461,7 @@ async function ProvidersList() {
   return (
     <div className="space-y-3 sm:space-y-4">
       {providers.map((provider, index) => (
-        <div key={provider[0]} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-[#1C1C30]/50 rounded-xl">
+        <div key={index} className="flex items-center justify-between p-3 sm:p-4 bg-gray-50 dark:bg-[#1C1C30]/50 rounded-xl">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-[#E8B85F]/10 to-[#E8B85F]/5 flex items-center justify-center flex-shrink-0">
               {provider === 'google' ? (
