@@ -6,22 +6,22 @@ import { oswald } from "../fonts";
 import { blogPosts } from "./blogData";
 
 export default function Blog() {
-  const featuredPosts = [
-    {
-      title: "Mastering Academic Writing: Key Strategies",
-      excerpt: "Proven techniques to plan, structure, edit, and polish essays, theses, and research papers with confidence.",
-      image: "/blog1.jpeg",
-      link: "/blog/mastering-academic-writing",
-      category: "Writing Tips",
-    },
-    {
-      title: "How to Write a Compelling Introduction",
-      excerpt: "Hook your reader from the first sentence and set up a powerful argument — with real examples that work.",
-      image: "/blog2.jpeg",
-      link: "/blog/compelling-introductions",
-      category: "Writing Craft",
-    },
-  ];
+  // const featuredPosts = [
+  //   {
+  //     title: "Mastering Academic Writing: Key Strategies",
+  //     excerpt: "Proven techniques to plan, structure, edit, and polish essays, theses, and research papers with confidence.",
+  //     image: "/blog1.jpeg",
+  //     link: "/blog/mastering-academic-writing",
+  //     category: "Writing Tips",
+  //   },
+  //   {
+  //     title: "How to Write a Compelling Introduction",
+  //     excerpt: "Hook your reader from the first sentence and set up a powerful argument — with real examples that work.",
+  //     image: "/blog2.jpeg",
+  //     link: "/blog/compelling-introductions",
+  //     category: "Writing Craft",
+  //   },
+  // ];
 
   // const blogPosts = [
   //   { title: "Effective Citation Methods", excerpt: "Master APA, MLA, Chicago, and Harvard styles to cite flawlessly...", image: "/blog3.jpeg", link: "/blog/effective-citation-methods", category: "Writing Tips" },
