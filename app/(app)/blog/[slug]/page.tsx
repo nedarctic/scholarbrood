@@ -1,5 +1,10 @@
 import { blogPosts } from '../blogData';
-import BlogPostClient from './BlogPostClient';
+import dynamic from 'next/dynamic';
+
+const BlogPostClient = dynamic(() => import('./BlogPostClient'), {
+  ssr: false,
+});
+
 import { oswald } from '@/app/(app)/fonts';
 import { Suspense } from 'react';
 
@@ -10,25 +15,19 @@ export function generateStaticParams() {
 }
 
 export default function BlogPostPage({
-    params,
+  params,
 }: {
-    params: { slug: string };
+  params: { slug: string };
 }) {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = blogPosts.find((p) => p.slug === params.slug);
 
-    if (!post) {
-        return (
-            <div className={`${oswald.className} min-h-screen flex items-center justify-center text-2xl font-bold text-red-600 dark:text-red-400`}>
-                404 - Post not found
-            </div>
-        );
-    }
-
+  if (!post) {
     return (
-        <Suspense fallback={<div className={`${oswald.className} min-h-screen flex flex-col justify-center items-center`}>
-            <p className={`${oswald.className} text-xl dark:text-white text-black`}>Loading...</p>
-        </div>}>
-            <BlogPostClient post={post} />
-        </Suspense>
+      <div className={`${oswald.className} min-h-screen flex items-center justify-center text-2xl font-bold text-red-600`}>
+        404 - Post not found
+      </div>
     );
+  }
+
+  return <BlogPostClient post={post} />;
 }
