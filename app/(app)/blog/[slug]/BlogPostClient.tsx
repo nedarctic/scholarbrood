@@ -1,4 +1,3 @@
-// app/blog/[id]/BlogPostClient.tsx
 'use client';
 
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -20,31 +19,12 @@ type BlogPost = {
 };
 
 export default function BlogPostClient({ post }: { post: BlogPost }) {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-
+  
   const [mounted, setMounted] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showShare, setShowShare] = useState(false);
 
   useEffect(() => setMounted(true), []);
-
-  // Table of contents extraction (simplified)
-  const extractHeadings = (html: string) => {
-    const h2Matches = html.match(/<h2[^>]*>([^<]+)<\/h2>/g) || [];
-    const h3Matches = html.match(/<h3[^>]*>([^<]+)<\/h3>/g) || [];
-    return [...h2Matches, ...h3Matches].map((match, idx) => (
-      <li key={idx}>
-        {match.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, '')}
-      </li>
-    ));
-  };
-
-  const headings = extractHeadings(post.content);
 
   return (
     <main
@@ -56,12 +36,6 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
         transition-colors duration-700 relative overflow-x-hidden
       `}
     >
-      {/* Premium Reading Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E8B85F] via-[#F5D088] to-[#E8B85F] origin-left z-50 shadow-lg"
-        style={{ scaleX }}
-      />
-
       {/* Sophisticated Background Patterns */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#E8B85F]/3 via-transparent to-transparent" />
