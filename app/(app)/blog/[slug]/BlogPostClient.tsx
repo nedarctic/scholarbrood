@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, Calendar, Clock, Tag, BookOpen, Share2, Bookmark, Eye, User, ChevronRight, Quote, CheckCircle, Lightbulb, Target, Zap, Brain } from 'lucide-react';
