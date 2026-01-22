@@ -3,20 +3,19 @@ import BlogPostClient from './BlogPostClient';
 import { oswald } from '@/app/(app)/fonts';
 import { Suspense } from 'react';
 
-export const dynamic = 'force-dynamic';
-
 export function generateStaticParams() {
     return blogPosts.map((post) => ({
         slug: post.slug,
     }));
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
     params,
 }: {
     params: { slug: string };
 }) {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+    const resolvedParams = await params;
+    const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
 
     if (!post) {
         return (
