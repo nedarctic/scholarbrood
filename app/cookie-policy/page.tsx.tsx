@@ -1,8 +1,7 @@
 'use client'
 
-export const dynamic = "force-dynamic"
-
 import { useState, useEffect } from 'react';
+import { oswald } from '@/app/fonts'
 
 export default function CookiePolicy() {
   const [year, setYear] = useState<number>();
@@ -10,8 +9,6 @@ export default function CookiePolicy() {
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
-
-  const { oswald } = require('../fonts');
 
   return (
     <div className={`${oswald.className} py-20 min-h-screen bg-gray-900 text-gray-200`}>
