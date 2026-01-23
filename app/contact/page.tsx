@@ -6,6 +6,8 @@ import { useState } from "react";
 import { MapPin, Mail, Phone, Send, CheckCircle as FaCheckCircle, XCircle as FaExclamationCircle, X } from "lucide-react";
 import { oswald } from "../fonts";
 
+export const dynamic = "force-dynamic";
+
 export default function ContactPage() {
   const [modalState, setModalState] = useState<"loading" | "success" | "error" | null>(null);
   const [modalMessage, setModalMessage] = useState("");
