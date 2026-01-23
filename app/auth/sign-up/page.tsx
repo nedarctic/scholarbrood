@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic"
+
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -15,12 +17,9 @@ import {
   Loader2,
 } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
-
 import { oswald } from "@/app/fonts";
 import { createClient } from "@/app/lib/supabase/client";
 import { signInWithGoogle } from "@/app/lib/oauth/auth";
-
-export const dynamic = "force-dynamic"
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -277,6 +276,7 @@ export default function SignUpPage() {
       <AnimatePresence>
         {modal.type && (
           <motion.div
+            key={modal.type}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
