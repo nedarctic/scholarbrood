@@ -15,8 +15,6 @@ import { Label } from "@/app/components/ui/label";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export const dynamic = "force-dynamic"
-
 export function UpdatePasswordForm({
   className,
   ...props
