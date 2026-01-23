@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Menu, X, LogOut } from "lucide-react";
@@ -25,7 +26,7 @@ export default function Header() {
     { label: "Our Services", href: "/services" },
     { label: "Tutorials", href: "/tutorials" },
     { label: "Dashboard", href: "/dashboard" },
-    { label: "Blogs & Insight", href: "/blog" },
+    // { label: "Blogs & Insight", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ];
 
