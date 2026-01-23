@@ -34,13 +34,15 @@ export default function ServicesClient() {
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
             <Link
-              href="/contact"
+            // to be changed back to contact
+              href="/about"
               className={`${oswald.className} px-6 py-4 sm:px-10 sm:py-5 bg-[#E8B85F] text-[#1C1C30] font-bold text-md sm:text-lg rounded-full hover:bg-[#d4a44e] hover:scale-105 transition-all duration-300 shadow-xl flex items-center gap-3`}
             >
               Get Academic Help Now <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
-              href="/contact"
+              // to be changed back to contact
+              href="/about"
               className={`${oswald.className} px-6 py-4 sm:px-10 sm:py-5 border-2 border-[#E8B85F] text-white font-bold text-md sm:text-lg rounded-full hover:bg-[#E8B85F]/20 transition-all duration-300`}
             >
               Request Research Support
@@ -243,13 +245,15 @@ export default function ServicesClient() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
                 <Link
-                  href="/contact"
+                  // to be changed back to contact
+              href="/about"
                   className={`${oswald.className} w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 dark:bg-[#1C1C30] bg-[#1C1C30] text-[#E8B85F] text-base sm:text-lg md:text-xl font-bold rounded-full hover:bg-[#1C1C30]/90 hover:scale-105 shadow-2xl transition-all duration-300`}
                 >
                   Request Expert Help Today
                 </Link>
                 <Link
-                  href="/contact"
+                  // to be changed back to contact
+              href="/about"
                   className={`${oswald.className} w-full sm:w-auto px-6 sm:px-10 py-4 sm:py-5 border-2 md:border-4 border-[#1C1C30] text-white text-base sm:text-lg md:text-xl font-bold rounded-full dark:hover:bg-[#1C1C30] hover:bg-[#1C1C30] hover:text-[#E8B85F] transition-all duration-300`}
                 >
                   Start Publication Processing

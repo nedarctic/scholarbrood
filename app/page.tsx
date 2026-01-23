@@ -126,7 +126,8 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="/contact"
+                // to be changed back to contact
+                href="/about"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className={`${oswald.className} px-6 py-4 sm:px-10 sm:py-5 bg-[#E8B85F] text-[#1C1C30] rounded-full text-md sm:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3`}

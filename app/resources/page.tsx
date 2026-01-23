@@ -158,7 +158,8 @@ export default function Resources() {
               </p>
 
               <Link
-                href="/contact"
+                // to be changed back to contact
+                href="/about"
                 className="px-12 py-5 bg-white text-[#1C1C30] text-lg md:text-xl font-bold rounded-full hover:scale-105 transition-all duration-300 shadow-2xl flex items-center gap-3"
               >
                 Request Custom Resource

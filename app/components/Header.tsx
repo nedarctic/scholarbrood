@@ -27,7 +27,7 @@ export default function Header() {
     { label: "Tutorials", href: "/tutorials" },
     { label: "Dashboard", href: "/dashboard" },
     // { label: "Blogs & Insight", href: "/blog" },
-    { label: "Contact", href: "/contact" },
+    // { label: "Contact", href: "/contact" },
   ];
 
   const handleLogout = async () => {

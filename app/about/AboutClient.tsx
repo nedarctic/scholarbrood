@@ -32,7 +32,8 @@ export default function AboutClient() {
             ScholarBrood is a dedicated team of experienced academics, researchers, and writing professionals committed to helping students, scholars, and researchers excel.
           </p>
           <Link
-            href="/contact"
+            // to be changed back to contact
+            href="/about"
             className="px-8 py-4 bg-[#E8B85F] text-[#1C1C30] font-bold text-lg rounded-full hover:bg-[#d4a44e] hover:scale-105 transition-all duration-300 shadow-xl flex items-center gap-3"
           >
             Get in Touch <ArrowRight className="w-5 h-5" />
@@ -219,7 +220,8 @@ export default function AboutClient() {
                 Contact us today to start your project or learn more about how we can help.
               </p>
               <Link
-                href="/contact"
+                // to be changed back to contact
+                href="/about"
                 className="inline-flex items-center justify-center px-10 sm:px-12 py-5 sm:py-6 bg-white text-[#1C1C30] text-lg sm:text-xl font-bold rounded-full shadow-2xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 gap-3 whitespace-nowrap"
               >
                 Get in Touch <ArrowRight className="w-6 h-6" />
