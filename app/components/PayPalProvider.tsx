@@ -4,6 +4,8 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { PAYPAL_CONFIG } from "@/app/config/paypal";
 import { ReactNode } from "react";
 
+export const dynamic = "force-dynamic"
+
 export default function PayPalProvider({ children }: { children: ReactNode }) {
 	return (
 		<PayPalScriptProvider

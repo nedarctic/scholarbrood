@@ -6,6 +6,8 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+export const dynamic = "force-dynamic"
+
 interface SubscriptionButtonProps {
 	plan: SubscriptionPlan;
 }

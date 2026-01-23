@@ -4,6 +4,8 @@ import { createClient } from "@/app/lib/supabase/client";
 import { Button } from "@/app/components/ui/button";
 import { useRouter } from "next/navigation";
 
+export const dynamic = "force-dynamic"
+
 export function LogoutButton() {
   const router = useRouter();
 
