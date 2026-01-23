@@ -2,11 +2,15 @@
 
 export const dynamic = "force-dynamic"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { oswald } from '../fonts';
 
 export default function CookiePolicy() {
-  const [year, setYear] = useState<number>(new Date().getFullYear());
+  const [year, setYear] = useState<number>();
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <div className={`${oswald.className} py-20 min-h-screen bg-gray-900 text-gray-200`}>
