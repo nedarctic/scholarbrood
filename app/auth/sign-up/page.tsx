@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 
 const SignUpPageClient = dynamic(
   () => import('./SignUpPageClient'),
-  { ssr: false }
+  { ssr: true }
 )
 
 export default function Page() {
