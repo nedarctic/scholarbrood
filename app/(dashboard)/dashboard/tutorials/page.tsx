@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { oswald } from "@/app/fonts"
 
 export default function TutorialsPage(){
