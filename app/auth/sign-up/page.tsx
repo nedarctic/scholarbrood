@@ -1,10 +1,12 @@
-import dynamic from 'next/dynamic'
+'use client';
+
+import dynamic from "next/dynamic";
 
 const SignUpPageClient = dynamic(
-  () => import('./SignUpPageClient'),
-  { ssr: true }
-)
+  () => import("./SignUpPageClient"),
+  { ssr: false }
+);
 
 export default function Page() {
-  return <SignUpPageClient />
+  return <SignUpPageClient />;
 }
