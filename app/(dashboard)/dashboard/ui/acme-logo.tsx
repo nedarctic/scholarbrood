@@ -1,5 +1,5 @@
 import { GlobeAltIcon } from '@heroicons/react/24/outline';
-import { oswald } from '@/app/(app)/fonts';
+import { oswald } from '@/app/fonts';
 
 export default function AcmeLogo() {
   return (

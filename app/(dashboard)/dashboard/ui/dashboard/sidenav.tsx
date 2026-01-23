@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import NavLinks from '@/app/(dashboard)/dashboard/ui/dashboard/nav-links';
 import { PowerIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import { oswald } from '@/app/(app)/fonts';
+import { oswald } from '@/app/fonts';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/app/(app)/lib/supabase/client';
+import { createClient } from '@/app/lib/supabase/client';
 
 export const dynamic = "force-dynamic"
 

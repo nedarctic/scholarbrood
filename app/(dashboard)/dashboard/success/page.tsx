@@ -1,8 +1,8 @@
 "use client";
 
-import { oswald } from "@/app/(app)/fonts";
+import { oswald } from "@/app/fonts";
 import { useEffect, useState } from "react";
-import { createClient } from "@/app/(app)/lib/supabase/client";
+import { createClient } from "@/app/lib/supabase/client";
 
 export const dynamic = "force-dynamic"
 

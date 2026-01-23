@@ -1,9 +1,9 @@
-import { GetSubscription } from '@/app/(app)/lib/paypal/subscriptions'
-import type { StoredSubscription } from '@/app/(app)/types/subscription'
-import { getPayPalPlanName } from '@/app/(app)/lib/paypal/paypal'
-import { createClient } from '@/app/(app)/lib/supabase/server'
+import { GetSubscription } from '@/app/lib/paypal/subscriptions'
+import type { StoredSubscription } from '@/app/types/subscription'
+import { getPayPalPlanName } from '@/app/lib/paypal/paypal'
+import { createClient } from '@/app/lib/supabase/server'
 import { Suspense } from 'react'
-import { oswald } from '@/app/(app)/fonts'
+import { oswald } from '@/app/fonts'
 import { redirect } from 'next/navigation'
 import type {
   SupabaseClient,

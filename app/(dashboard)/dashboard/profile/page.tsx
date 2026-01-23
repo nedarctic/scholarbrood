@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { createClient } from "@/app/(app)/lib/supabase/server";
+import { createClient } from "@/app/lib/supabase/server";
 import { Suspense } from "react";
 import {
   User,
@@ -14,7 +14,7 @@ import {
   Verified,
   LucideIcon
 } from "lucide-react";
-import { oswald } from "@/app/(app)/fonts";
+import { oswald } from "@/app/fonts";
 
 export const dynamic = "force-dynamic"
 

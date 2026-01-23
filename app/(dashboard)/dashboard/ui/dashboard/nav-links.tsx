@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { oswald } from '@/app/(app)/fonts';
+import { oswald } from '@/app/fonts';
 
 const links = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },

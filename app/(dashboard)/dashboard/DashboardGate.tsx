@@ -1,10 +1,10 @@
 import { redirect } from "next/navigation";
-import { createClient } from "@/app/(app)/lib/supabase/server";
+import { createClient } from "@/app/lib/supabase/server";
 import { InfoIcon, Shield, BookOpen, FileText, CheckCircle, ArrowRight } from "lucide-react";
-import { isActiveSubscription } from "@/app/(app)/lib/paypal/subscriptions";
-import { GetSubscription } from "@/app/(app)/lib/paypal/subscriptions";
-import { oswald } from "@/app/(app)/fonts";
-import { getPayPalPlanName } from "@/app/(app)/lib/paypal/paypal";
+import { isActiveSubscription } from "@/app/lib/paypal/subscriptions";
+import { GetSubscription } from "@/app/lib/paypal/subscriptions";
+import { oswald } from "@/app/fonts";
+import { getPayPalPlanName } from "@/app/lib/paypal/paypal";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic"

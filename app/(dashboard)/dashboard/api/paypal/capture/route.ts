@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getPayPalAccessToken_Sandbox } from "@/app/(app)/lib/paypal/paypal";
+import { getPayPalAccessToken_Sandbox } from "@/app/lib/paypal/paypal";
 import type { PayPalOrderCapture } from "@/app/(dashboard)/dashboard/types/paypal";
-import { createClient } from "@/app/(app)/lib/supabase/server";
+import { createClient } from "@/app/lib/supabase/server";
 
 export async function POST(req: NextRequest) {
     const supabase = await createClient();
