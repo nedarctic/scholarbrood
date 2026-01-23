@@ -3,7 +3,6 @@
 export const dynamic = "force-dynamic"
 
 import { useState } from 'react';
-
 import { oswald } from '../fonts';
 
 export default function CookiePolicy() {
